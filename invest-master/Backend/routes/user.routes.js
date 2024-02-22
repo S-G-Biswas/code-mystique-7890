@@ -32,6 +32,9 @@ userRouter.post("/login",async(req,res)=>{
     const {email,password} = req.body
     try {
          const user =  await UserModel.findOne({email})
+         if(!user){
+          res.send({"Error":"User Not Found"})
+         }
          
          bcrypt.compare(password, user.password, (err, result) => {
                if(result){
