@@ -6,6 +6,8 @@
     color: white;
     height: 40px;
     padding: 10px 20px;
+    border: 2px solid white;
+
   }
   
   .navbar__left {

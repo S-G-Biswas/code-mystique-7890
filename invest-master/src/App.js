@@ -1,11 +1,14 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Allstocks from './pages/Stocks';
+import HomePage from './pages/Homepage';
+// import Allstocks from './pages/Stocks';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar />
+      <HomePage/>
+      
     </div>
   );
 }
