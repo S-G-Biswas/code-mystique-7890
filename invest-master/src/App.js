@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SignUp from './pages/register';
 import Homepage from './pages/Homepage'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Allstocks from './pages/Stocks'
 
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
