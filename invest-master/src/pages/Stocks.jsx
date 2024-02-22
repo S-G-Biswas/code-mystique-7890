@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import Cardstock from '../components/Cardstock';
+import Cardstock from '../components/Card';
 import axios from "axios";
 
 const Allstocks = () => {
