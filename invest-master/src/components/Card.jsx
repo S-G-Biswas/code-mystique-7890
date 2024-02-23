@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Button, Card, CardBody, CardFooter, CardHeader, Heading, SimpleGrid, Text, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, FormControl, FormLabel, Input, Select, useToast } from '@chakra-ui/react';
-
+import { Button, CardBody, CardFooter, Heading, SimpleGrid, Text, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, FormControl, FormLabel, Input, Select, useToast } from '@chakra-ui/react';
+import { Card, CardHeader } from '@chakra-ui/react';
 const Cardstock = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStock, setSelectedStock] = useState(null);
