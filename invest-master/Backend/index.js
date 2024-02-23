@@ -2,12 +2,13 @@ const express = require("express");
 require("dotenv").config()
 const {connection} =require("./config/db")
 const {userRouter} = require("./routes/user.routes")
-const cors=require("cors")
+const cors=require("cors");
+const { stockrouter } = require("./routes/stock.routes");
 const app = express();
 app.use(express.json());
 app.use(cors())
 app.use("/users",userRouter)
-
+app.use("/stocks",stockrouter)
 
 //Public Routes
 

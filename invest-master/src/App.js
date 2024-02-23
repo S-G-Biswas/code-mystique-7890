@@ -7,6 +7,8 @@ import Homepage from './pages/Homepage'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Allstocks from './pages/Stocks'
 
+
+
 function App() {
   const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
@@ -14,12 +16,13 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
+      
         <Routes>
-          <Route
+          {/* <Route
               exact
               path="/"
               element={isLoggedIn == "true" ? <Homepage /> : <Login />}
-            />
+            /> */}
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/Homepage" element={<Homepage />} />
