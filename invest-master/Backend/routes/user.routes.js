@@ -7,14 +7,14 @@ const jwt = require("jsonwebtoken")
 //Adding new user
 
 userRouter.post("/register",async(req,res)=>{
-   const {username,email,password}= req.body
+   const {username,email,password,role}= req.body
      try {
          bcrypt.hash(password, 8, async(err, hash) => {
              if(err){
                   res.send({"error":err})
              }
              else{
-               const user= new UserModel({username,email,password:hash})
+               const user= new UserModel({username,email,password:hash,role})
                await user.save();
                res.send({"msg":"New user has been added"})
              }
@@ -51,6 +51,7 @@ userRouter.post("/login",async(req,res)=>{
        
     }
 })
+
 
 
 
