@@ -57,6 +57,8 @@ userRouter.post("/login",async(req,res)=>{
 
 //user can see alll stocks page
 // User can see all stocks page
+
+
 userRouter.get("/allstocks", auth, access("user"), async (req, res) => {
   try {
     const stocks = await StockModel.find();
