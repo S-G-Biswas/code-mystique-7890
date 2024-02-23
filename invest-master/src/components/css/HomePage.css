@@ -1,0 +1,17 @@
+.HomePage{
+    background-color: black;
+    margin-top: 0px;
+    /* border: 1px solid rgba(255, 0, 0, 0.938); */
+}
+
+
+.dataCard{
+    width: 60%;
+    margin: auto;
+}
+.shbztext{
+    color: white;
+    margin-top: 0px;
+    padding-top: 10px;
+    margin-left: 40px;
+}
