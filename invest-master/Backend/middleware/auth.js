@@ -15,7 +15,7 @@ const auth = (req,res,next)=>{
         }
     }
     else{
-        res.send({"msg":"you are not authorised"})
+        res.send({"msg":"you are not authorised to access this page"})
     }
 }
 
