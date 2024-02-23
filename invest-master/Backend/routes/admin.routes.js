@@ -3,11 +3,11 @@ const { StockModel } = require("../model/stock.model")
 const { auth } = require("../middleware/auth")
 const { access } = require("../middleware/access")
 
-const stockrouter=express.Router()
+const adminrouter=express.Router()
 
 
 //to view all the stocks by the admin
-stockrouter.get("/",auth,access,async(req,res)=>{
+adminrouter.get("/",auth,access("admin"),async(req,res)=>{
     try {
         const stocks=await StockModel.find()
         res.status(200).send({"msg":"The available stocks are",stocks})
@@ -18,7 +18,7 @@ stockrouter.get("/",auth,access,async(req,res)=>{
 
 
 //to post a new stock to the alllstocks page by the admin
-stockrouter.post("/",auth,async(req,res)=>{
+adminrouter.post("/",auth,access("admin"),async(req,res)=>{
     try {
         const stock=new StockModel(req.body)
         await stock.save()
@@ -30,7 +30,7 @@ stockrouter.post("/",auth,async(req,res)=>{
 })
 
 //to update a new stock to the alllstocks page by the admin
-stockrouter.patch("/:stockID",auth,access("admin"),async(req,res)=>{
+adminrouter.patch("/:stockID",auth,access("admin"),async(req,res)=>{
     try {
         const {stockID}=req.params
         const updatedstock=await StockModel.findByIdAndUpdate({_id:stockID},req.body)
@@ -42,7 +42,7 @@ stockrouter.patch("/:stockID",auth,access("admin"),async(req,res)=>{
 })
 
 //to delete a stock to the alllstocks page by the admin
-stockrouter.delete("/:stockID",auth,access("admin"),async(req,res)=>{
+adminrouter.delete("/:stockID",auth,access("admin"),async(req,res)=>{
     try {
         const {stockID}=req.params
         const stock= await StockModel.findByIdAndDelete({_id:stockID})
@@ -54,6 +54,6 @@ stockrouter.delete("/:stockID",auth,access("admin"),async(req,res)=>{
 
 
 module.exports={
-stockrouter
+adminrouter
 }
 
