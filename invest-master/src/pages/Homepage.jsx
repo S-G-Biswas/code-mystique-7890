@@ -2,6 +2,7 @@ import React from "react";
 import { Chart as ChartJS} from "chart.js/auto";
 import { Bar, Line } from 'react-chartjs-2';
 import "../components/css/HomePage.css"
+import TopStock from "../components/topStocks";
 
 
 
@@ -35,8 +36,8 @@ const HomePage = () => {
             },
           }}
         />
-
       </div>
+      <TopStock/>
     </div>
   )
 }
