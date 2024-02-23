@@ -10,7 +10,7 @@ import Allstocks from './pages/Stocks'
 
 
 function App() {
-  const isLoggedIn = window.localStorage.getItem("loggedIn");
+  // const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
     
     <Router>
