@@ -28,3 +28,15 @@
  margin-bottom: 50px;
 text-align: center;
 }
+
+@media only screen and (max-width: 768px) {
+    .stock-cards{
+    grid-template-columns: repeat(3,1fr);
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .stock-cards{
+    grid-template-columns: repeat(1,1fr);
+    }
+  }
