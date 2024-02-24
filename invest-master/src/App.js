@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Allstocks from './pages/Stocks'
 import UserStock from './pages/portfolio';
+import Adminstocks from './pages/Adminstocks';
 
 
 
