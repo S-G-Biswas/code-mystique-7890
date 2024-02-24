@@ -2,17 +2,26 @@ const express = require("express");
 require("dotenv").config()
 const {connection} =require("./config/db")
 const {userRouter} = require("./routes/user.routes")
-const cors=require("cors")
+const {StockModel} = require("./model/stock.model")
+const cors=require("cors");
+const { adminrouter } = require("./routes/admin.routes");
 const app = express();
 app.use(express.json());
 app.use(cors())
-app.use("/users",userRouter)
 
+
+app.use("/users",userRouter)
+app.use("/adminstocks",adminrouter)
 
 //Public Routes
 
-app.get("/", (req,res)=>{
-    res.send({"msg":"This is home Route"})
+app.get("/", async(req,res)=>{
+  try {
+    const topStocks = await StockModel.find().sort({price:-1}).limit(10);
+    res.status(200).send({"msg":"topStocks are",topStocks})
+  } catch (error) {
+    res.send({"error":error})
+  }
 })
 
 app.get("/about",(req,res)=>{
