@@ -188,6 +188,9 @@
 
 // export default Adminstocks;
 
+
+//except update others are woring sat nit
+
 import React, { useState, useEffect } from "react";
 import {
   Button,
