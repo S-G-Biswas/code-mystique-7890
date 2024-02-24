@@ -13,6 +13,13 @@
     border: 2px solid white;
     border-radius: 10px;
     padding-top: 15px;
+    transition: transform 0.3s ease;
+}
+
+.stock-card:hover{
+    background-color: #1eb2a6;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .top-stock-h1{
