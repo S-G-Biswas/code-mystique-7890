@@ -14,7 +14,15 @@ const Allstocks = () => {
 
   const fetchStock = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/users/allstocks");
+      const response = await axios.get("http://localhost:8080/users/allstocks",
+      {
+        method:"GET",
+        headers:{
+          "Content-type":"application/json",
+          authorization:`Bearer ${localStorage.getItem("token")}`
+        }
+      }
+      );
       setStock(response.data.stocks);
       setCurrentPage(1);
     } catch (error) {

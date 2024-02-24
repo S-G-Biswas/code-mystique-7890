@@ -65,6 +65,13 @@ const Cardstock = ({ data }) => {
        price: totalPrice,
           returns:selectedStock.return
          
+        },
+        {
+          method:"POST",
+          headers:{
+            "Content-type":"application/json",
+            authorization:`Bearer ${localStorage.getItem("token")}`
+          }
         });
         console.log('Payment processed successfully');
   
