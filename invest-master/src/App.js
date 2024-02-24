@@ -6,6 +6,7 @@ import SignUp from './pages/register';
 import Homepage from './pages/Homepage'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Allstocks from './pages/Stocks'
+import Adminstocks from './pages/Adminstocks';
 
 
 
@@ -26,9 +27,13 @@ function App() {
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/Homepage" element={<Homepage />} />
+          <Route path="/stocks" element={<Adminstocks />} />
+          
+
         </Routes>
          
-         
+       
+
       </div>
     </Router>
     

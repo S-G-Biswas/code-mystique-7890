@@ -16,7 +16,7 @@ const Navbar = () => {
         {/* Right side options */}
         <div className="navbar__right">
           <ul className="navbar__list">
-          <li className="navbar__item"><a href="/storepage">Stocks</a></li>
+          <li className="navbar__item"><a href="/stocks">Stocks</a></li>
             <li className="navbar__item"><a href="/portfolio">Portfolio</a></li>
             <li className="navbar__item"><a href="/sign-in">Login</a></li>
             <li className="navbar__item"><a href="/sign-up">SignUp</a></li>
