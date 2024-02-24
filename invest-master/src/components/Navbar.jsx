@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './css/Navbar.css'; 
 // import logo from "../logo.svg"
 import logo from "../logo.jpeg"
@@ -6,6 +6,8 @@ import logo from "../logo.jpeg"
 
 
 const Navbar = () => {
+  const [menuOpen,setMenuOpen] = useState(false)
+  
     return (
       <nav className="navbar">
         {/* Left side logo */}
@@ -15,7 +17,14 @@ const Navbar = () => {
   
         {/* Right side options */}
         <div className="navbar__right">
-          <ul className="navbar__list">
+          <div className="menu" onClick={()=>{
+            setMenuOpen(!menuOpen)
+          }}>
+      <span></span>
+      <span></span>
+      <span></span>
+          </div>
+          <ul className={`navbar__list ${menuOpen ? 'open' : ''}`}>
           <li className="navbar__item"><a href="/Homepage">Home</a></li>
           <li className="navbar__item"><a href="/stocks">Stocks</a></li>
             <li className="navbar__item"><a href="/portfolio">Portfolio</a></li>

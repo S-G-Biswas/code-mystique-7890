@@ -26,9 +26,11 @@
   }
   
   .navbar__list {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    justify-content: end;
   }
   
   .navbar__item {
@@ -42,5 +44,44 @@
   }
   
   .navbar__item a:hover {
-    color: yellow;
+    color: #1eb2a6;
+  }
+  
+  .menu{
+    display: none;
+    position: absolute;
+    top:0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+  }
+  .menu span{
+    height: 0.4rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.2rem;
+  }
+
+  @media (max-width : 480px){
+    .menu{
+      display: flex;
+    }
+    .navbar__list{
+      display: none;
+      flex-direction: column;
+      width: 100vw;
+      margin-bottom: 0.25rem;
+      margin-top: 1rem;
+      font-size: larger;
+      background-color: #1eb2a6;
+      text-align: center;
+    }
+    .navbar__logo{
+      margin-top: 0%;
+    }
+    .navbar__list.open {
+      display: flex; 
+    }
   }
