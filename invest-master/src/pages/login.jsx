@@ -24,12 +24,14 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data.status == "ok") {
+        if (data) {
           alert("login successful");
           window.localStorage.setItem("token", data.data);
           window.localStorage.setItem("loggedIn", true);
-
           window.location.href = "./Homepage";
+        }
+        else{
+          alert("Not found");
         }
       });
   }
