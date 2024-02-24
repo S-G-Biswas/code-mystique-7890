@@ -14,8 +14,9 @@ const Allstocks = () => {
 
   const fetchStock = async () => {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/todos");
-      setStock(response.data);
+      const response = await axios.get("http://localhost:8080/users/allstocks");
+      setStock(response.data.stocks);
+      setCurrentPage(1);
     } catch (error) {
       console.log("Error fetching stock data");
     }
