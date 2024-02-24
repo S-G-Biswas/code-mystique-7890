@@ -20,6 +20,7 @@ function App() {
       <div className="App">
         <Navbar />
         <UserStock />
+        <Adminstocks />
         <Routes>
           {/* <Route
               exact

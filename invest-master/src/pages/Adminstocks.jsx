@@ -43,7 +43,12 @@ const Adminstocks = () => {
 
   const fetchAdminStock = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/adminstocks/");
+      const response = await axios.get("http://localhost:8080/adminstocks/",{
+        headers:{
+          "Content-type":"application/json",
+          authorization:`Bearer ${localStorage.getItem("token")}`
+        }
+      });
       setAdminstock(response.data.stocks); // Update adminstock with array of stocks
     } catch (error) {
       console.log("Error fetching stock data:", error);
@@ -63,10 +68,18 @@ const Adminstocks = () => {
     setModalMode("add");
   };
 
+
+  /////////////////////////////////////////////////////
   // Admin deletes a stock
   const handleDeleteStock = async (stockId) => {
     try {
-      await axios.delete(`http://localhost:8080/adminstocks/${stockId}`);
+      await axios.delete(`http://localhost:8080/adminstocks/${stockId}`,{
+        method:"DELETE",
+        headers:{
+          "Content-type":"application/json",
+          authorization:`Bearer ${localStorage.getItem("token")}`
+        }
+      });
       setAdminstock((prevStocks) =>
         prevStocks.filter((stock) => stock._id !== stockId)
       );
@@ -86,6 +99,8 @@ const Adminstocks = () => {
       });
     }
   };
+/////////////////////////////////////////////////////////////////////
+
 
   // Admin updates a stock
   const handleUpdate = async () => {
@@ -93,7 +108,13 @@ const Adminstocks = () => {
       // Send the entire selectedStock object
       await axios.patch(
         `http://localhost:8080/adminstocks/${selectedStock._id}`,
-        selectedStock
+        selectedStock,{
+          method:"PATCH",
+          headers:{
+            "Content-type":"application/json",
+            authorization:`Bearer ${localStorage.getItem("token")}`
+          }
+        }
       );
       handleModalClose();
       // Update adminstock state after patching the stock
@@ -122,11 +143,21 @@ const Adminstocks = () => {
     }
   };
 
+
+  ////////////////////////////////////////////////////
   // Admin adds a new stock
   const handleAddStock = async () => {
     try {
       // Send a POST request to add a new stock
-      await axios.post("http://localhost:8080/adminstocks", newStock);
+      await axios.post("http://localhost:8080/adminstocks", newStock,
+      {
+        method:"POST",
+        headers:{
+          "Content-type":"application/json",
+          authorization:`Bearer ${localStorage.getItem("token")}`
+        }
+      });
+
       setIsModalOpen(false);
       toast({
         title: "Stock added successfully",
@@ -271,20 +302,46 @@ const Adminstocks = () => {
             ) : (
               <>
                 <FormControl>
-                  <FormLabel>Stock Name</FormLabel>
-                  <Input defaultValue={selectedStock.name} />
-                </FormControl>
-                <FormControl>
-                  <FormLabel>Stock Price</FormLabel>
-                  <Input defaultValue={selectedStock.price} />
-                </FormControl>
-                <FormControl>
-                  <FormLabel>Stock Return</FormLabel>
-                  <Input defaultValue={selectedStock.return} />
-                </FormControl>
-              </>
-            )}
-          </ModalBody>
+        <FormLabel>Stock Name</FormLabel>
+        <Input
+          defaultValue={selectedStock.name}
+          onChange={(e) =>
+            setSelectedStock({
+              ...selectedStock,
+              name: e.target.value,
+            })
+          }
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Stock Price</FormLabel>
+        <Input
+          defaultValue={selectedStock.price}
+          onChange={(e) =>
+            setSelectedStock({
+              ...selectedStock,
+              price: e.target.value,
+            })
+          }
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Stock Return</FormLabel>
+        <Input
+          defaultValue={selectedStock.return}
+          onChange={(e) =>
+            setSelectedStock({
+              ...selectedStock,
+              return: e.target.value,
+            })
+          }
+        />
+      </FormControl>
+    </>
+  )}
+</ModalBody>
+
+
           <ModalFooter>
             {modalMode === "add" ? (
               <Button bg={"teal.500"} color={"white"} onClick={handleAddStock}>
