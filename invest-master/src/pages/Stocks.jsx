@@ -37,12 +37,12 @@ const Allstocks = () => {
 
   return (
     <div>
-      <h1>Stocks available are....</h1>
+      <h1 style={{color:"yellow"}}>Stocks available are....</h1>
       <Cardstock data={currentStock} />
       <div style={{display:"flex",justifyContent:"center",gap:"2%"}}>
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>Previous</button>
-        <span>{currentPage}</span>
-        <button onClick={goToNextPage} disabled={currentPage === Math.ceil(stock.length / itemsPerPage)}>Next</button>
+        <button style={{color:"yellow"}} onClick={goToPreviousPage} disabled={currentPage === 1}>Previous</button>
+        <span style={{color:"yellow"}} >{currentPage}</span>
+        <button  style={{color:"yellow"}} onClick={goToNextPage} disabled={currentPage === Math.ceil(stock.length / itemsPerPage)}>Next</button>
       </div>
     </div>
   );

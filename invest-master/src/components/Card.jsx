@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, CardBody, CardFooter, Heading, SimpleGrid, Text, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, FormControl, FormLabel, Input, Select, useToast } from '@chakra-ui/react';
 import { Card, CardHeader } from '@chakra-ui/react';
+import axios from 'axios';
 
 const Cardstock = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,10 +53,20 @@ const Cardstock = ({ data }) => {
     }
   };
 
-  const handlePayAmount = () => {
+  const handlePayAmount = async() => {
     if (cardNumber.length === 6 && paymentMethod !== '') {
       // Your payment processing logic here
-      console.log('Payment processed successfully');
+
+      try {
+        const totalPrice = selectedStock.price * (quantity[selectedStock.id] || 0);
+        await axios.post("http://localhost:8080/portfolio", {
+          // userId: "",  //(Add userid)
+          name: selectedStock.name,
+       price: totalPrice,
+          returns:selectedStock.return
+         
+        });
+        console.log('Payment processed successfully');
   
       // Show a toast message when stocks are added to the portfolio
       toast({
@@ -64,8 +75,19 @@ const Cardstock = ({ data }) => {
         duration: 3000,
         isClosable: true,
       });
-  
       setIsModalOpen(false);
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: "Failed to process payment. Please try again later.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+      
+  
+      
     } else {
       // Show an error toast message if the conditions are not met
       toast({
