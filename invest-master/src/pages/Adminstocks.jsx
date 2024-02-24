@@ -302,20 +302,46 @@ const Adminstocks = () => {
             ) : (
               <>
                 <FormControl>
-                  <FormLabel>Stock Name</FormLabel>
-                  <Input defaultValue={selectedStock.name} />
-                </FormControl>
-                <FormControl>
-                  <FormLabel>Stock Price</FormLabel>
-                  <Input defaultValue={selectedStock.price} />
-                </FormControl>
-                <FormControl>
-                  <FormLabel>Stock Return</FormLabel>
-                  <Input defaultValue={selectedStock.return} />
-                </FormControl>
-              </>
-            )}
-          </ModalBody>
+        <FormLabel>Stock Name</FormLabel>
+        <Input
+          defaultValue={selectedStock.name}
+          onChange={(e) =>
+            setSelectedStock({
+              ...selectedStock,
+              name: e.target.value,
+            })
+          }
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Stock Price</FormLabel>
+        <Input
+          defaultValue={selectedStock.price}
+          onChange={(e) =>
+            setSelectedStock({
+              ...selectedStock,
+              price: e.target.value,
+            })
+          }
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Stock Return</FormLabel>
+        <Input
+          defaultValue={selectedStock.return}
+          onChange={(e) =>
+            setSelectedStock({
+              ...selectedStock,
+              return: e.target.value,
+            })
+          }
+        />
+      </FormControl>
+    </>
+  )}
+</ModalBody>
+
+
           <ModalFooter>
             {modalMode === "add" ? (
               <Button bg={"teal.500"} color={"white"} onClick={handleAddStock}>
