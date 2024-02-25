@@ -31,7 +31,12 @@ function App() {
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/" element={<Homepage />} />
-          <Route path="/stocks" element={<Allstocks />} />
+          {/* <Route path="/stocks" element={<Allstocks />} /> */}
+          <Route
+              exact
+              path="/stocks"
+              element={isLoggedIn == 'true'? <Allstocks /> : <Login />}
+            />
           
         </Routes>
          
