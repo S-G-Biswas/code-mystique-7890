@@ -24,16 +24,16 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "userRegister");
-        if (data) {
+        if (data.accessToken) {
           alert("login successful");
-          window.localStorage.setItem("token", data.data);
+          window.localStorage.setItem("token", data.accessToken);
           window.localStorage.setItem("loggedIn", true);
-          window.location.href = "./Homepage";
+          window.location.href = "/";
+        }else{
+          alert("user not found")
         }
-        else{
-          alert("Not found");
-        }
-      });
+        
+      }).catch(err=>{console.log(err)});
   }
 
   return (
