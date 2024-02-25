@@ -1,8 +1,10 @@
 import React, { Component, useState } from "react";
+import { useToast } from "@chakra-ui/react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const toast = useToast();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +27,14 @@ export default function Login() {
       .then((data) => {
         console.log(data, "userRegister");
         if (data.accessToken) {
-          alert("login successful");
+          // alert("login successful");
+          toast({
+            title: "Login Successful",
+            description: "You have successfully logged in.",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+          });
           window.localStorage.setItem("token", data.accessToken);
           window.localStorage.setItem("loggedIn", true);
           window.location.href = "/";

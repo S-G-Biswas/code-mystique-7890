@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './css/Navbar.css'; 
+import { useToast } from "@chakra-ui/react";
 // import logo from "../logo.svg"
 import logo from "../logo.jpeg"
 
@@ -11,6 +12,7 @@ const Navbar = () => {
   // const isLoggedIn = window.localStorage.getItem("loggedIn");
   const [menuOpen,setMenuOpen] = useState(false)
   const [loggedIn,setLoggedIn] = useState(false);
+  const toast = useToast();
 
   useEffect(() => {
     const isLoggedIn = window.localStorage.getItem("loggedIn");
@@ -23,6 +25,13 @@ const Navbar = () => {
     e.preventDefault();
     localStorage.clear();
     setLoggedIn(false);
+    toast({
+      title: "Logout Successful",
+      description: "You have successfully logged out.",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
     window.location.href = "/";
   };
 
