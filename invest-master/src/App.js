@@ -6,6 +6,9 @@ import SignUp from './pages/register';
 import Homepage from './pages/Homepage'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Allstocks from './pages/Stocks'
+import UserStock from './pages/portfolio';
+import Adminstocks from './pages/Adminstocks';
+
 
 
 
@@ -16,7 +19,8 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-      
+        <UserStock />
+        <Adminstocks />
         <Routes>
           {/* <Route
               exact
