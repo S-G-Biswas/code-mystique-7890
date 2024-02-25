@@ -52,7 +52,6 @@ export default function UserStock() {
               <TableCaption>Here is All your Stock</TableCaption>
               <Thead>
                 <Tr>
-                <Th>Stock ID</Th>
                  <Th>Stock Name</Th>
                   <Th>Stock Price</Th>
                   <Th isNumeric>Stock Returns</Th>
@@ -67,7 +66,6 @@ export default function UserStock() {
 
                    return(
                     <Tr>
-                      <Td>{_id}</Td>
                     <Td>{name}</Td>
                     <Td>{price}</Td>
                     <Td>{returns}</Td>

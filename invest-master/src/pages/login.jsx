@@ -35,9 +35,17 @@ export default function Login() {
             duration: 5000,
             isClosable: true,
           });
+          window.localStorage.setItem("email",email)
           window.localStorage.setItem("token", data.accessToken);
           window.localStorage.setItem("loggedIn", true);
+              ///for admin
+                if(email=="admin@gmail.com"){
+            window.location.href="/adminstocks"
+            }
+              else{
+            //forusers
           window.location.href = "/";
+          }
         }else{
           alert("user not found")
         }

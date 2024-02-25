@@ -58,9 +58,10 @@ const Cardstock = ({ data }) => {
       // Your payment processing logic here
 
       try {
-        const totalPrice = selectedStock.price * (quantity[selectedStock.id] || 0);
+        const totalPrice = selectedStock.price * (quantity[selectedStock.id] || 1);
         await axios.post("http://localhost:8080/portfolio", {
           // userId: "",  //(Add userid)
+          user:localStorage.getItem("email"),
           name: selectedStock.name,
        price: totalPrice,
           returns:selectedStock.return
@@ -125,7 +126,7 @@ const Cardstock = ({ data }) => {
             <CardFooter gap="4" justifyContent='center'>
               <Button onClick={() => handlePayment(item)}>BUY NOW</Button>
               <Button onClick={() => increaseQuantity(item._id)}>+</Button>
-              <Text margin="0">{quantity[item._id] || 0}</Text>
+              <Text margin="0">{quantity[item._id] || 1}</Text>
               <Button onClick={() => decreaseQuantity(item._id)}>-</Button>
             </CardFooter>
           </Card>

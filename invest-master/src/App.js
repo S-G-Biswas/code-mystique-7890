@@ -19,7 +19,6 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        {/* <Adminstocks /> */}
         
         <Routes>
           <Route
@@ -31,6 +30,8 @@ function App() {
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/" element={<Homepage />} />
+          <Route path="/adminstocks" element={<Adminstocks />} />
+
           {/* <Route path="/stocks" element={<Allstocks />} /> */}
           <Route
               exact
