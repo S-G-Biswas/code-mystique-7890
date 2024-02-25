@@ -1,9 +1,11 @@
 import React, {useState } from "react";
 
+
 export default function SignUp() {
   const [username, setUname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   const handleSubmit = (e) => {
 
@@ -27,10 +29,13 @@ export default function SignUp() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data, "userRegister");
-          if (data.status == "ok") {
+          if (data) {
             alert("Registration Successful");
-          } else {
+            window.location.href = "/sign-in";
+          } 
+          else {
             alert("Something went wrong");
+            
           }
         });
   };

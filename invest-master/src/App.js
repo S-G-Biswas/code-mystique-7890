@@ -13,23 +13,24 @@ import Adminstocks from './pages/Adminstocks';
 
 
 function App() {
-  // const isLoggedIn = window.localStorage.getItem("loggedIn");
+  const isLoggedIn = window.localStorage.getItem("loggedIn");
   return (
     
     <Router>
       <div className="App">
         <Navbar />
-        <UserStock />
-        <Adminstocks />
+        {/* <Adminstocks /> */}
+        
         <Routes>
-          {/* <Route
+          <Route
               exact
-              path="/"
-              element={isLoggedIn == "true" ? <Homepage /> : <Login />}
-            /> */}
+              path="/portfolio"
+              element={isLoggedIn == 'true'? <UserStock /> : <Login />}
+            />
+            
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/Homepage" element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/stocks" element={<Allstocks />} />
           
         </Routes>
