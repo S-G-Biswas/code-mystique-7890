@@ -6,7 +6,6 @@ const portfolioRouter= express.Router()
 //get user stocks
 
 portfolioRouter.get("/",async(req,res)=>{
-   
      try {  
         const stock =  await portfolioModel.find();
         res.send({"msg":"Here is your stocks",stock}) 
@@ -19,11 +18,11 @@ portfolioRouter.get("/",async(req,res)=>{
 
 //Post user
 portfolioRouter.post("/",async(req,res)=>{
-    const {name,price,returns}= req.body
+    const {name,price,returns,user}= req.body
 
       try {
           
-        const stock= new portfolioModel({name,price,returns})
+        const stock= new portfolioModel({name,price,returns,user})
         await stock.save();
         res.send({"msg":"New stock has been added"})
       } 
@@ -33,7 +32,7 @@ portfolioRouter.post("/",async(req,res)=>{
       }
  })
 
- //Delete
+ //Delete byb shyam
  portfolioRouter.delete("/:stockID",async(req,res)=>{
     try {
         const {stockID}= req.params;
@@ -43,6 +42,9 @@ portfolioRouter.post("/",async(req,res)=>{
         res.status(500).send({"msg":"Error in deleting stock"})
     }
 })
+
+
+
 
 
 

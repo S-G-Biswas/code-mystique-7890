@@ -29,6 +29,7 @@ userRouter.post("/register",async(req,res)=>{
      }
 })
 
+
 //Authenticating the existing user -->  Login
 
 userRouter.post("/login",async(req,res)=>{
@@ -57,7 +58,9 @@ userRouter.post("/login",async(req,res)=>{
 
 //user can see alll stocks page
 // User can see all stocks page
-userRouter.get("/allstocks", auth, access("user"), async (req, res) => {
+// userRouter.get("/allstocks", auth, access("user"), async (req, res) => {
+
+userRouter.get("/allstocks", async (req, res) => {
   try {
     const stocks = await StockModel.find();
     res.status(200).send({ "msg": "The available stocks are", stocks });

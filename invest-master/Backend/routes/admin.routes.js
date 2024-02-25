@@ -7,7 +7,9 @@ const adminrouter=express.Router()
 
 
 //to view all the stocks by the admin
-adminrouter.get("/",auth,access("admin"),async(req,res)=>{
+adminrouter.get("/",async(req,res)=>{
+
+// adminrouter.get("/",auth,access("admin"),async(req,res)=>{
     try {
         const stocks=await StockModel.find()
         res.status(200).send({"msg":"The available stocks are",stocks})
@@ -18,7 +20,10 @@ adminrouter.get("/",auth,access("admin"),async(req,res)=>{
 
 
 //to post a new stock to the alllstocks page by the admin
-adminrouter.post("/",auth,access("admin"),async(req,res)=>{
+
+// adminrouter.post("/",auth,access("admin"),async(req,res)=>{
+
+adminrouter.post("/",async(req,res)=>{
     try {
         const stock=new StockModel(req.body)
         await stock.save()
@@ -30,7 +35,9 @@ adminrouter.post("/",auth,access("admin"),async(req,res)=>{
 })
 
 //to update a new stock to the alllstocks page by the admin
-adminrouter.patch("/:stockID",auth,access("admin"),async(req,res)=>{
+// adminrouter.patch("/:stockID",auth,access("admin"),async(req,res)=>{
+    adminrouter.patch("/:stockID",async(req,res)=>{
+
     try {
         const {stockID}=req.params
         const updatedstock=await StockModel.findByIdAndUpdate({_id:stockID},req.body)
@@ -42,7 +49,9 @@ adminrouter.patch("/:stockID",auth,access("admin"),async(req,res)=>{
 })
 
 //to delete a stock to the alllstocks page by the admin
-adminrouter.delete("/:stockID",auth,access("admin"),async(req,res)=>{
+// adminrouter.delete("/:stockID",auth,access("admin"),async(req,res)=>{
+    adminrouter.delete("/:stockID",async(req,res)=>{
+
     try {
         const {stockID}=req.params
         const stock= await StockModel.findByIdAndDelete({_id:stockID})

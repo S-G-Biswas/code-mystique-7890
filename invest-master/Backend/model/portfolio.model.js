@@ -4,8 +4,7 @@ const portfolioSchema = mongoose.Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true },
   returns: { type: Number, required: true },
-  // userID:{type: Number, required: true},
-  // username: {type: Number, required: true}
+  user:{type: String, required: true}
 })
 
 
