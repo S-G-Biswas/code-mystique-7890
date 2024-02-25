@@ -28,21 +28,35 @@ export default function Login() {
         console.log(data, "userRegister");
         if (data.accessToken) {
           // alert("login successful");
-          toast({
-            title: "Login Successful",
-            description: "You have successfully logged in.",
-            status: "success",
-            duration: 5000,
-            isClosable: true,
-          });
+          // toast({
+          //   title: "Login Successful",
+          //   description: "You have successfully logged in.",
+          //   status: "success",
+          //   duration: 5000,
+          //   isClosable: true,
+          // });
           window.localStorage.setItem("email",email)
           window.localStorage.setItem("token", data.accessToken);
           window.localStorage.setItem("loggedIn", true);
               ///for admin
                 if(email=="admin@gmail.com"){
+                  toast({
+                    title: "Login Successful",
+                    description: "You have successfully logged in.",
+                    status: "success",
+                    duration: 5000,
+                    isClosable: true,
+                  });
             window.location.href="/adminstocks"
             }
               else{
+                toast({
+                  title: "Login Successful",
+                  description: "You have successfully logged in.",
+                  status: "success",
+                  duration: 5000,
+                  isClosable: true,
+                });
             //forusers
           window.location.href = "/";
           }

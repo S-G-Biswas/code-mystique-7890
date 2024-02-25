@@ -12,12 +12,15 @@ const Navbar = () => {
   // const isLoggedIn = window.localStorage.getItem("loggedIn");
   const [menuOpen,setMenuOpen] = useState(false)
   const [loggedIn,setLoggedIn] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
   const toast = useToast();
 
   useEffect(() => {
     const isLoggedIn = window.localStorage.getItem("loggedIn");
+    const email = window.localStorage.getItem("email");
     if (isLoggedIn) {
       setLoggedIn(true);
+      setUserEmail(email);
     }
   }, []);
   
@@ -29,7 +32,7 @@ const Navbar = () => {
       title: "Logout Successful",
       description: "You have successfully logged out.",
       status: "success",
-      duration: 5000,
+      duration: 8000,
       isClosable: true,
     });
     window.location.href = "/";
@@ -53,9 +56,13 @@ const Navbar = () => {
           </div>
           <ul className={`navbar__list ${menuOpen ? 'open' : ''}`}>
           <li className="navbar__item"><a href="/">Home</a></li>
-          <li className="navbar__item"><a href="/stocks">Stocks</a></li>
+          {loggedIn && userEmail === "admin@gmail.com" ? null :(
+            <>
+            <li className="navbar__item"><a href="/stocks">Stocks</a></li>
             <li className="navbar__item"><a href="/portfolio">Portfolio</a></li>
-            {loggedIn ? (
+            </>
+          )}
+          {loggedIn ? (
             <li className="navbar__item"><a href="#" onClick={handleLogout}>Logout</a></li>
           ) : (
             <>
