@@ -89,26 +89,29 @@ Link: https://outstanding-gray-xerus.cyclic.app/
 
 ## api end points
 GET: 
-     /users/allstocks
-     /adminstocks
-     /portfolio
+    #### /users/allstocks
+    #### /adminstocks
+     #### /portfolio
      
-POST: /users/register
-      /users/login
-      /portfolio
-      /adminstocks
+POST:
+      ####  /users/register
+      #### /users/login
+     ####  /portfolio
+      #### /adminstocks
 
-PATCH: /adminstocks/:stockID
+PATCH: 
+        ####/adminstocks/:stockID
 
-DELETE: /portfolio/:stockID
-       /adminstocks/ :stockID
+DELETE: 
+####/portfolio/:stockID
+       #### /adminstocks/ :stockID
 
 
 ## Technology Stack
---Reactjs
---Nodejs
---expressjs
---MongoDB
+  ####--Reactjs
+ ####--Nodejs
+ ####--expressjs
+ ####--MongoDB
        
       
 
