@@ -117,7 +117,7 @@ const Cardstock = ({ data }) => {
               <Heading size='md'>STOCK</Heading>
             </CardHeader>
             <CardBody>
-              <Text>View a summary of all your customers over the last month.</Text>
+              
               <img src="https://img.freepik.com/free-vector/stock-market-concept-design_1017-13713.jpg" alt="" />
               <Heading size='sm'>Stock: {item.name}</Heading>
               <Heading size='sm'>Price: {item.price}</Heading>
