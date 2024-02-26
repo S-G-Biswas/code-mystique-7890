@@ -45,11 +45,13 @@ link:https://www.youtube.com/watch?v=2G07C5Bxs8w
 We are a team of 3, planned and developed this user interactive website in the span of 5 days. 
 for design we followed the same theme over all the pages and sections
 
-## Installation and getting started
-bash
+## Installation and Getting Started
+
+```bash
 npm install invest-master
 cd invest-master
 npm start
+
 
 ## Usage
 Visit the website-https://investmaster.vercel.app/
