@@ -1,5 +1,5 @@
 ## Project Title 
-## Invest Master
+### Invest Master
 
 ## Introduction
 InvestMaster is conceived as a state-of-the-art stock market portfolio management application that aims to democratize investing by making it accessible, understandable,
@@ -7,12 +7,12 @@ and engaging for everyone. Drawing inspiration from leading platforms like Robin
 recommendations, social trading capabilities, and an immersive educational suite designed to enhance the user's investing skills.
 
 ## Project type 
-### Full Stack (MERN)
+#### Full Stack (MERN)
 
 ## Deployed App
-### Frontend:https://investmaster.vercel.app/
-### Backend:https://outstanding-gray-xerus.cyclic.app/
-### Database:mongodb+srv://shyamgopalbiswas:Sgbiswas22114atlas@cluster0.in6i802.mongodb.net/InvestMaster?retryWrites=true&w=majority
+#### Frontend:https://investmaster.vercel.app/
+#### Backend:https://outstanding-gray-xerus.cyclic.app/
+#### Database:mongodb+srv://shyamgopalbiswas:Sgbiswas22114atlas@cluster0.in6i802.mongodb.net/InvestMaster?retryWrites=true&w=majority
 
 ## Directory Structure
 
