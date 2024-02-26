@@ -16,8 +16,8 @@ Database:mongodb+srv://shyamgopalbiswas:Sgbiswas22114atlas@cluster0.in6i802.mong
 
 ## Directory Structure
 Invest-Master/
-# --Backend/
- # --Frontend/
+#### --Backend/
+ #### --Frontend/
 ---public
 ---src
 ----components
