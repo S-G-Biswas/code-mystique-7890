@@ -15,16 +15,17 @@ recommendations, social trading capabilities, and an immersive educational suite
 ### Database:mongodb+srv://shyamgopalbiswas:Sgbiswas22114atlas@cluster0.in6i802.mongodb.net/InvestMaster?retryWrites=true&w=majority
 
 ## Directory Structure
+
 ### Invest-Master/
-#### --Backend/
- #### --Frontend/
- #### ---public
- #### ---src
- ##### ----components
- ##### ----pages
- ##### ----styles
- ##### ----app.js
- ##### ----index.js
+- Backend/
+- Frontend/
+  - public/
+  - src/
+    - components/
+    - pages/
+    - styles/
+    - app.js
+    - index.js
 
 ## Video walkthrough of the project
 link:https://www.youtube.com/watch?v=2G07C5Bxs8w
@@ -34,10 +35,11 @@ link:https://www.youtube.com/watch?v=2G07C5Bxs8w
 
 
 ## Features
--User can view the top trending stocks in the market
--User can Buy stocks form wide variety of stocks 
--User can sell their stocks from  portfolio
--Admin can add,update,delete the stock available in the market
+- User can view the top trending stocks in the market
+- User can buy stocks from a wide variety of stocks
+- User can sell their stocks from their portfolio
+- Admin can add, update, and delete the stocks available in the market
+
 
 ## Design decision or assumption
 We are a team of 3, planned and developed this user interactive website in the span of 5 days. 
@@ -87,33 +89,31 @@ user: email:r@gmail.com
 ## api used
 Link: https://outstanding-gray-xerus.cyclic.app/
 
-## api end points
-GET: 
-    #### /users/allstocks
-    #### /adminstocks
-     #### /portfolio
-     
-POST:
-      ####  /users/register
-      #### /users/login
-     ####  /portfolio
-      #### /adminstocks
+## API Endpoints
 
-PATCH: 
-        ####/adminstocks/:stockID
+### GET:
+- /users/allstocks
+- /adminstocks
+  - /portfolio
 
-DELETE: 
-####/portfolio/:stockID
-       #### /adminstocks/ :stockID
+### POST:
+- /users/register
+- /users/login
+  - /portfolio
+  - /adminstocks
 
+### PATCH:
+- /adminstocks/:stockID
+
+### DELETE:
+- /portfolio/:stockID
+- /adminstocks/:stockID
 
 ## Technology Stack
-  ####--Reactjs
- ####--Nodejs
- ####--expressjs
- ####--MongoDB
-       
-      
+- Reactjs
+- Nodejs
+- Expressjs
+- MongoDB
 
 
 
