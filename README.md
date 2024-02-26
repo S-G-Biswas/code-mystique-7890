@@ -47,7 +47,7 @@ for design we followed the same theme over all the pages and sections
 
 ## Installation and Getting Started
 
-```bash
+bash
 npm install invest-master
 cd invest-master
 npm start
