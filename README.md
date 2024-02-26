@@ -1,7 +1,7 @@
 ## Project Title 
-### Invest Master
+## Invest Master
 
-## Introdcution
+## Introduction
 InvestMaster is conceived as a state-of-the-art stock market portfolio management application that aims to democratize investing by making it accessible, understandable,
 and engaging for everyone. Drawing inspiration from leading platforms like Robinhood and E*TRADE, InvestMaster will incorporate a blend of intuitive design with advanced
 recommendations, social trading capabilities, and an immersive educational suite designed to enhance the user's investing skills.
