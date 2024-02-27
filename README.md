@@ -30,9 +30,6 @@ recommendations, social trading capabilities, and an immersive educational suite
 ## Video walkthrough of the project
 link:https://www.youtube.com/watch?v=2G07C5Bxs8w
 
-## Video walkthrough of the project
-link:https://www.youtube.com/watch?v=2G07C5Bxs8w
-
 
 ## Features
 - User can view the top trending stocks in the market
