@@ -117,17 +117,16 @@ const Cardstock = ({ data }) => {
               <Heading size='md'>STOCK</Heading>
             </CardHeader>
             <CardBody>
-              <Text>View a summary of all your customers over the last month.</Text>
               <img src="https://img.freepik.com/free-vector/stock-market-concept-design_1017-13713.jpg" alt="" />
               <Heading size='sm'>Stock: {item.name}</Heading>
               <Heading size='sm'>Price: {item.price}</Heading>
               <Heading size='sm'>Return: {item.return}</Heading>
             </CardBody>
             <CardFooter gap="4" justifyContent='center'>
-              <Button onClick={() => handlePayment(item)}>BUY NOW</Button>
-              <Button onClick={() => increaseQuantity(item._id)}>+</Button>
+              <Button style={{ backgroundColor: 'black', color: 'white' }} onClick={() => handlePayment(item)}>BUY NOW</Button>
+              <Button style={{ backgroundColor: 'black', color: 'white' }} onClick={() => increaseQuantity(item._id)}>+</Button>
               <Text margin="0">{quantity[item._id] || 1}</Text>
-              <Button onClick={() => decreaseQuantity(item._id)}>-</Button>
+              <Button style={{ backgroundColor: 'black', color: 'white' }} onClick={() => decreaseQuantity(item._id)}>-</Button>
             </CardFooter>
           </Card>
         ))}
@@ -156,8 +155,8 @@ const Cardstock = ({ data }) => {
             )}
           </ModalBody>
           <ModalFooter>
-            <Button onClick={handlePayAmount}  bg={"teal.500"} color={"white"} disabled={!isFormValid}>Submit</Button>
-            <Button onClick={handleModalClose} ml={3}>Cancel</Button>
+            <Button style={{ backgroundColor: 'black', color: 'white' }} onClick={handlePayAmount}  bg={"teal.500"} color={"white"} disabled={!isFormValid}>Submit</Button>
+            <Button style={{ backgroundColor: 'black', color: 'white' }} onClick={handleModalClose} ml={3}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

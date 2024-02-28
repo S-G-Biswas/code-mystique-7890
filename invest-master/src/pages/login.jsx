@@ -107,12 +107,12 @@ export default function Login() {
           </div>
 
           <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark">
               Submit
             </button>
           </div>
           <p className="forgot-password text-right">
-            <a href="/sign-up">Sign Up</a>
+            <a style={{color:"black"}} href="/sign-up">Sign Up</a>
           </p>
         </form>
       </div>

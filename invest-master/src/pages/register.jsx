@@ -1,11 +1,12 @@
 import React, {useState } from "react";
+import { useToast } from "@chakra-ui/react";
 
 
 export default function SignUp() {
   const [username, setUname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const toast = useToast();
 
   const handleSubmit = (e) => {
 
@@ -30,11 +31,25 @@ export default function SignUp() {
         .then((data) => {
           console.log(data, "userRegister");
           if (data) {
-            alert("Registration Successful");
+            // alert("Registration Successful");
+            toast({
+              title: "Register Successful",
+              description: "You have successfully Registered.",
+              status: "success",
+              duration: 5000,
+              isClosable: true,
+            });
             window.location.href = "/sign-in";
           } 
           else {
-            alert("Something went wrong");
+            // alert("Something went wrong");
+            toast({
+              title: "Register Failed",
+              description: "There is some error",
+              status: "error",
+              duration: 5000,
+              isClosable: true,
+            });
             
           }
         });
@@ -76,12 +91,12 @@ export default function SignUp() {
           </div>
 
           <div className="d-grid">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark">
               Sign Up
             </button>
           </div>
-          <p className="forgot-password text-right">
-            Already registered <a href="/sign-in">sign in?</a>
+          <p  className="forgot-password text-right">
+            Already registered <a style={{color:"black"}} href="/sign-in">sign in?</a>
           </p>
         </form>
       </div>
